@@ -1,0 +1,82 @@
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: #0b0b0b;
+	background-image:
+		linear-gradient(135deg, #0b0b0b 0%, #2b0000 40%, #6b0000 100%),
+		radial-gradient(circle at 10% 10%, rgba(255,0,0,0.06), transparent 18%),
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04' fill='white'/%3E%3C/svg%3E");
+	background-size: cover, cover, 200px 200px;
+	background-attachment: fixed;
+	color: #f3f4f6; /* light text on dark background */
+	min-height: 100vh;
+	padding: 16px;
+	padding-top: 52px;
+}
+
+/* Profile page layout */
+#profile-page {
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+}
+
+/* Card styles (kept white for readability) */
+.profile-card {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Banner and profile image */
+.banner-image {
+	width: 100%;
+	height: 128px;
+}
+@media (min-width: 640px) {
+	.banner-image { height: 192px; }
+}
+.profile-picture {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	border: 4px solid white;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Organization logos */
+.org-logo { width: 48px; height: 48px; border-radius: 6px; object-fit: cover; }
+
+/* Spacing and layout */
+.content-padding { padding: 64px 24px 24px; }
+@media (min-width: 640px) { .content-padding { padding: 24px 32px 24px; } }
+
+/* Make the about card slightly elevated for contrast */
+.bg-white.rounded-lg.shadow-md { box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+
+/* Ensure avatar overlap positions correctly across breakpoints */
+.profile-card .relative { position: relative; }
+.profile-card .absolute { position: absolute; left: 1rem; bottom: -48px; }
+
+@media (max-width: 639px) {
+	.profile-card .absolute { left: 1rem; bottom: -40px; }
+	.profile-picture { width: 80px; height: 80px; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+	.profile-card .absolute { left: 1.5rem; bottom: -48px; }
+	.profile-picture { width: 96px; height: 96px; }
+}
+
+@media (min-width: 1024px) {
+	/* desktop: slightly larger avatar and deeper overlap */
+	.profile-card .absolute { left: 2rem; bottom: -56px; }
+	.profile-picture { width: 112px; height: 112px; }
+	.banner-image { height: 260px; }
+	/* wider layout container for desktop pages */
+	#profile-page { max-width: 1100px; }
+}
+
+
